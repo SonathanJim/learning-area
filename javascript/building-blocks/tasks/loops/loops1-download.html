@@ -30,7 +30,12 @@
     const list = document.createElement('ul');
 
     // Add your code here
-
+    // loop that takes items in provided myArray and prints them out
+    // on screen inside list items <li> appended to the provided list.
+      for (item of myArray ) {
+      const listItem = document.createElement('li');
+      listItem.innerText = item;
+      list.appendChild(listItem)}
     // Don't edit the code below here!
 
     const section = document.querySelector('section');
