@@ -41,8 +41,16 @@
 
 
     // Add your code here
-
-
+    // loop to go through numbers 2 to 500 backwards and run provided isPrime()
+    // for each number that isn't prime continue to next loop iteration.
+    // for each prime add to para.textContent with a separator.
+    while (i>=2) {
+      if (isPrime(i)) {
+        para.textContent += `${i},
+        `;
+      } 
+      i--; 
+    }
     // Don't edit the code below here!
     const section = document.querySelector('section');
     section.appendChild(para);
