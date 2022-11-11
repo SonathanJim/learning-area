@@ -19,6 +19,12 @@
   <body>
 
     <section class="preview">
+      <label for="search">Search by contact name: </label>
+      <input id="search" type="text" />
+      <button>Search</button>
+
+      <p></p>
+
 
 
 
@@ -26,8 +32,9 @@
 
   </body>
   <script>
-    const name = 'Mustafa';
     const para = document.createElement('p');
+    const input = document.querySelector('input');
+    const btn = document.querySelector('button');
 
     const phonebook = [
       { name : 'Chris', number : '1549' },
@@ -42,6 +49,23 @@
 
     // Add your code here
 
+    btn.addEventListener('click', () => {
+      const searchName = input.value.toLowerCase();
+      input.value = '';
+      input.focus();
+      para.textContent = '';
+      for (let i=0; i <= phonebook.length-1; i++) {
+        const name = phonebook[`${i}`].name;
+        if (name.toLowerCase() === searchName) {
+          para.textContent = `Name: ${phonebook [`${i}`].name}
+          Number: ${phonebook [`${i}`].number}`;
+          break;
+        }
+      }
+      if (para.textContent === '') {
+        para.textContent = 'Contact not found.';
+      }
+    });
     // Don't edit the code below here!
     const section = document.querySelector('section');
     section.appendChild(para);
