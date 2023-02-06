@@ -31,9 +31,20 @@
       breed : 'Cymric',
       color : 'white',
       greeting: function() {
-        console.log('Meow!');
+        console.log(`Hello, said ${cat.name} the ${cat.breed}.`);
       }
     }
+
+    const cat2 = {
+      name : 'Benedict',
+      breed : 'Birman',
+      color : 'seal point',
+      greeting : function() {
+        console.log(`Hello, said ${cat2.name} the ${cat2.breed}.`);
+      }
+    }
+
+
   </script>
 
 </html>
